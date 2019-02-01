@@ -4,6 +4,6 @@
 
 ## Run Setup
 
-覆盖jmeter文件，目录下执行run.sh文件 报告在result
+Overwrite the jmeter file, execute the run.sh file in the directory. Report in result
 
-可以参考[jmeter系列文章](https://blog.csdn.net/wx19900503/column/info/19812)
+You can refer to the jmeter series article[jmeter](https://blog.csdn.net/wx19900503/column/info/19812)

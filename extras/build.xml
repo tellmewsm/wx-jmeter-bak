@@ -76,6 +76,7 @@
 
   <taskdef name="jmeter" classpathref="jmeter.classpath" classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask"/>
 
+  <!-- 增加target -->
   <target name="all" depends="run,report"/>
 
   <target name="run">
@@ -158,6 +159,24 @@
     <echo>Cannot find all xalan and/or serialiser jars</echo>
     <echo>The XSLT formatting may not work correctly.</echo>
     <echo>Check you have xalan and serializer jars in ${lib.dir}</echo>
+  </target>
+
+  <!-- 保证邮箱打开了smtp服务 ，使用授权码 -->
+  <target name="sendmail">
+    <mail mailhost="smtp.163.com" mailport="25" user="xxx@163.com" password="xxx" subject="send mail test" messagemimetype="text/html">
+      <from address="xxx@163.com" />
+      <to address="xxx@qq.com"/>
+      <attachments>
+        <fileset dir="${result.dir}">
+          <include name="Test.html"/>
+        </fileset>
+      </attachments>
+      <message>
+   
+    Test send mail by Ant
+ 
+      </message>
+    </mail>
   </target>
 
 
